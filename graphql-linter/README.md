@@ -5,7 +5,7 @@ Pre-commit hook that will run `prettier -c --write` on `.graphql` files to detec
 Add the following block to your `.pre-commit-config.yaml`
 ```
   - repo: https://github.com/CyberGRX/pre-commit
-    rev: master
+    rev: v1.0.0
     hooks:
       - id: graphql-linter
 ```

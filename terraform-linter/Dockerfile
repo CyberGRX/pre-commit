@@ -11,7 +11,10 @@
 # Pull Base Image
 FROM hashicorp/terraform:light
 
+ARG VERSION
+
 COPY terraform-lint.sh bin/terraform-lint.sh
-RUN chmod +x bin/terraform-lint.sh
+RUN chmod +x bin/terraform-lint.sh && \
+    echo "${VERSION}" > terraform-linter.version
 
 ENTRYPOINT ["terraform-lint.sh"]

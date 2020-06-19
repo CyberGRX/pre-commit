@@ -1,18 +1,18 @@
 - id: cypher-linter
   name: Neo4J Cypher linter
   description: Neo4J Cypher linting via docker_image
-  entry: cybergrx/cypher-linter:latest
+  entry: cybergrx/cypher-linter:1.0.0
   language: docker_image
   files: \.(cypher|cql|cpy)$
 - id: graphql-linter
   name: GraphQL schema linter
   description: GraphQL schema formatting and linting via docker_image
-  entry: cybergrx/graphql-linter:latest
+  entry: cybergrx/graphql-linter:1.0.0
   language: docker_image
   files: \.graphql$
 - id: terraform-linter
   name: Terraform linter
   description: Terraform linting via docker_image
-  entry: cybergrx/terraform-linter:latest
+  entry: cybergrx/terraform-linter:1.0.0
   language: docker_image
   files: \.(tf|tfvars)$

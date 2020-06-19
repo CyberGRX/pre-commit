@@ -11,6 +11,9 @@
 # Pull Base Image
 FROM node:lts-stretch-slim
 
-RUN npm install -g prettier
+ARG VERSION
+
+RUN npm install -g prettier && \
+    echo "${VERSION}" > graphql-linter.version
 
 ENTRYPOINT ["prettier", "-c", "--write"]
