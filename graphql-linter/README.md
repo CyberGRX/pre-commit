@@ -4,7 +4,7 @@ Pre-commit hook that will run `prettier -c --write` on `.graphql` files to detec
 # usage
 Add the following block to your `.pre-commit-config.yaml`
 ```
-  - repo: https://github.com/CyberGRX/graphql-linter
+  - repo: https://github.com/CyberGRX/pre-commit
     rev: master
     hooks:
       - id: graphql-linter

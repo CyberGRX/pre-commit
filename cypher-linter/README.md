@@ -4,7 +4,7 @@ Pre-commit hook that will run `cypher-lint` on `.cypher|.cql|.cpy` files.  See h
 # usage
 Add the following block to your `.pre-commit-config.yaml`
 ```
-  - repo: https://github.com/CyberGRX/cypher-linter
+  - repo: https://github.com/CyberGRX/pre-commit
     rev: master
     hooks:
       - id: cypher-linter

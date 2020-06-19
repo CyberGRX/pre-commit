@@ -1,5 +1,5 @@
 # pre-commit
-Implementations for a number of pre-commit hooks that were elusive in the wild.  Most of these hooks are going to be implemnted using docker_images to ensure good environmental isolation.
+Implementations for a number of pre-commit hooks that were elusive in the wild.  Most of these hooks are going to be implemented using docker_images to ensure good environmental isolation.
 
 # developing
 1. Make sure you `pre-commit install && pre-commit install --install-hooks && pre-commit install --hook-type pre-push`
