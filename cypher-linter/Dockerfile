@@ -15,9 +15,15 @@ ARG VERSION
 
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
-    add-apt-repository ppa:cleishm/neo4j && \
-    apt-get update && \
-    apt-get install -y cypher-lint && \
+    apt-get install -y git peg autoconf automake libtool apt-utils && \
+    git clone https://github.com/cleishm/libcypher-parser.git && \
+    cd libcypher-parser && \
+    ./autogen.sh && \
+    ./configure && \
+    make clean check && \
+    make install && \
+    cd .. && \
+    ldconfig && \
     echo "${VERSION}" > cypher-linter.version
 
 ENTRYPOINT ["cypher-lint", "--colorize"]
