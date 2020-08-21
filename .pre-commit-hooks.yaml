@@ -1,7 +1,7 @@
 - id: cypher-linter
   name: Neo4J Cypher linter
   description: Neo4J Cypher linting via docker_image
-  entry: cybergrx/cypher-linter:1.0.0
+  entry: cybergrx/cypher-linter:1.0.1
   language: docker_image
   files: \.(cypher|cql|cpy)$
 - id: graphql-linter
