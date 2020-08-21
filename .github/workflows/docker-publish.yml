@@ -2,7 +2,7 @@ name: Docker
 
 on:
   push:
-    # Publish `master` as Docker `latest` image.
+    # Commits to `master` build and push Docker images for all repos, make sure you update the VERSION file!
     branches:
       - master
 
