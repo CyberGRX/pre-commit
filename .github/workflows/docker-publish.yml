@@ -20,8 +20,11 @@ jobs:
       - name: Log into registry
         run: echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u ${{ secrets.DOCKER_HUB_USER }} --password-stdin
 
-      - name: Build and push images
-        run: |
-          make cypher-linter
-          make graphql-linter
-          make terraform-linter
+      - name: Build and push cypher-linter
+        run: make cypher-linter
+        
+      - name: Build and push graphql-linter
+        run: make graphql-linter
+      
+      - name: Build and push terraform-linter
+        run: make terraform-linter
