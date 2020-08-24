@@ -1,7 +1,7 @@
 VERSION := $(shell cat VERSION)
 
 docker:
-	docker build --tag=cybergrx/cypher-linter:${VERSION} --build-arg VERSION=${VERSION} -f Dockerfile .
+	docker pull cybergrx/cypher-linter:${VERSION} || docker build --tag=cybergrx/cypher-linter:${VERSION} --build-arg VERSION=${VERSION} -f Dockerfile .
 	docker tag cybergrx/cypher-linter:${VERSION} cybergrx/cypher-linter:latest
 
 	docker push cybergrx/cypher-linter:${VERSION}
