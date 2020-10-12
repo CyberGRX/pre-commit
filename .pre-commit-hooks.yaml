@@ -16,3 +16,9 @@
   entry: cybergrx/terraform-linter:1.0.1
   language: docker_image
   files: \.(tf|tfvars)$
+- id: ts-project-linter
+  name: Typescript project linter
+  description: Typescript linting and prettier formatting for .ts and .tsx files via docker_image
+  entry: cybergrx/ts-project-linter:1.0.1
+  language: docker_image
+  files: \.(ts|tsx)$
