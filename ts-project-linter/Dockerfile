@@ -13,9 +13,15 @@ FROM node:lts-stretch-slim
 
 ARG VERSION
 
-COPY .eslintrc.js /.eslintrc.js
+RUN npm config set registry https://nexus.grx-dev.com/repository/npm-group/ && \
+    npm config set progress=false && \
+    npm config set depth 0
 
-RUN npm install -g prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react && \
+RUN npx install-peerdeps -g @cybergrx/eslint-config
+
+RUN npx install-peerdeps -g @cybergrx/prettier-config
+
+RUN npm install -g @cybergrx/eslint-config @cybergrx/prettier-config \
     echo "${VERSION}" > ts-project-linter.version
 
-ENTRYPOINT ["ts-lint.sh"]
+ENTRYPOINT ["eslint","--fix","--quiet","--config","/.eslintrc.js","--quiet","--format","codeframe","--resolve-plugins-relative-to","/usr/local/lib/node_modules"]

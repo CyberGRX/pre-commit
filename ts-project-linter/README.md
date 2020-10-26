@@ -8,7 +8,7 @@ Add the following block to your `.pre-commit-config.yaml`
 
 ```
   - repo: https://github.com/CyberGRX/pre-commit
-    rev: v1.0.2
+    rev: v1.0.3
     hooks:
       - id: ts-project-linter
 ```
