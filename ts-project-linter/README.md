@@ -1,6 +1,6 @@
 # ts-project-linter
 
-Pre-commit hook that will run `eslint --fix --quiet --format codeframe` on `.ts` and `.tsx` files to detect and fix TS linting errors. It uses the custom configuration from `.eslintrc.js`.
+Pre-commit hook that will run `prettier --write -c` and then `eslint --fix --quiet --format codeframe` on `.ts` and `.tsx` files to detect and fix TS linting errors. It uses the custom configurations from our `@cybergrx/eslint-config` and `@cybergrx/prettier-config` packages.
 
 # usage
 
