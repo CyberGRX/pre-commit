@@ -20,8 +20,7 @@ RUN npm config set registry https://nexus.grx-dev.com/repository/npm-group/ && \
 RUN npx install-peerdeps --registry=https://nexus.grx-dev.com/repository/npm-group/ -g @cybergrx/eslint-config
 RUN npx install-peerdeps --registry=https://nexus.grx-dev.com/repository/npm-group/ -g @cybergrx/prettier-config
 
-RUN npm install -g @cybergrx/eslint-config @cybergrx/prettier-config \
-    echo "${VERSION}" > ts-project-linter.version
+RUN npm install -g @cybergrx/eslint-config @cybergrx/prettier-config
 
 COPY ts-lint.sh bin/ts-lint.sh
 RUN chmod +x bin/ts-lint.sh
