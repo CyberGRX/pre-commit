@@ -19,6 +19,6 @@
 - id: ts-project-linter
   name: Typescript project linter
   description: Typescript linting and prettier formatting for .ts and .tsx files via docker_image
-  entry: cybergrx/ts-project-linter:1.0.4
+  entry: cybergrx/ts-project-linter:1.0.5
   language: docker_image
   files: \.(ts|tsx)$
