@@ -30,7 +30,7 @@ Add the following block to your `.pre-commit-config.yaml`.
 
 ```
   - repo: https://github.com/CyberGRX/pre-commit
-    rev: v1.0.6
+    rev: v1.0.7
     hooks:
       - id: ts-project-linter
 ```
