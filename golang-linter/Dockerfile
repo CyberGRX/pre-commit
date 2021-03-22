@@ -1,0 +1,25 @@
+#########################################################################
+#    _________        ___.                   ______________________  ___
+#    \_   ___ \___.__.\_ |__   ___________  /  _____/\______   \   \/  /
+#    /    \  \<   |  | | __ \_/ __ \_  __ \/   \  ___ |       _/\     /
+#    \     \___\___  | | \_\ \  ___/|  | \/\    \_\  \|    |   \/     \
+#     \______  / ____| |___  /\___  >__|    \______  /|____|_  /___/\  \
+#            \/\/          \/     \/               \/        \/      \_/
+#
+#
+
+# ---------------------
+# ---------------------
+# builder container
+# ---------------------
+# ---------------------
+
+FROM 746807083977.dkr.ecr.us-east-1.amazonaws.com/platform-images/golang/debian:latest AS builder
+
+ARG VERSION
+
+COPY golang-lint.sh bin/golang-lint.sh
+RUN chmod +x bin/golang-lint.sh && \
+    echo "${VERSION}" > golang-linter.version
+
+ENTRYPOINT ["golang-lint.sh"]
