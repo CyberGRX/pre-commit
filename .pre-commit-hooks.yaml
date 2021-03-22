@@ -22,3 +22,9 @@
   entry: cybergrx/ts-project-linter:1.0.7
   language: docker_image
   files: \.(ts|tsx)$
+- id: golang-linter
+  name: Golang file linter
+  description: Golang linting via docker_image
+  entry: cybergrx/golang-linter:1.0.0
+  language: docker_image
+  files: \.go$
