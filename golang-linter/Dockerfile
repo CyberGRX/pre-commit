@@ -14,7 +14,7 @@
 # ---------------------
 # ---------------------
 
-FROM 746807083977.dkr.ecr.us-east-1.amazonaws.com/platform-images/golang/debian:latest AS builder
+FROM golang:latest
 
 ARG VERSION
 
