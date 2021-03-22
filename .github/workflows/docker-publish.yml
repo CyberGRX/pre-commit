@@ -7,7 +7,6 @@ on:
       - master
 
 jobs:
-
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   push:
@@ -22,9 +21,12 @@ jobs:
 
       - name: Build and push cypher-linter
         run: make cypher-linter
-        
+
       - name: Build and push graphql-linter
         run: make graphql-linter
-      
+
       - name: Build and push terraform-linter
         run: make terraform-linter
+
+      - name: Build and push golang-linter
+        run: make golang-linter

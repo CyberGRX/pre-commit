@@ -7,4 +7,7 @@ graphql-linter: force
 terraform-linter: force
 	$(MAKE) -C terraform-linter docker
 
+golang-linter: force
+	$(MAKE) -C golang-linter docker
+	
 force:
