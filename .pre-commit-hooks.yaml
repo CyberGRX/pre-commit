@@ -28,3 +28,9 @@
   entry: cybergrx/golang-linter:1.0.0
   language: docker_image
   files: \.go$
+- id: branch-length-checker
+  name: Branch length checker
+  description: Branch length checking via docker_image
+  entry: cybergrx/branch-length-checker:1.0.0
+  language: docker_image
+  always_run: true
