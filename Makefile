@@ -9,5 +9,8 @@ terraform-linter: force
 
 golang-linter: force
 	$(MAKE) -C golang-linter docker
-	
+
+branch-length-checker: force
+	$(MAKE) -C branch-length-checker docker
+
 force:
