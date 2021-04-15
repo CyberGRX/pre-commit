@@ -1,5 +1,5 @@
 # branch-length-checker
-Pre-commit hook that will run `cypher-lint` on `.cypher|.cql|.cpy` files.  See https://github.com/cleishm/libcypher-parser for cypher-lint docs and FAQ.
+Pre-commit hook that will run and check your branch length.
 
 # usage
 Add the following block to your `.pre-commit-config.yaml`
