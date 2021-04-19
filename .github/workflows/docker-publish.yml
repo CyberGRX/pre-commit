@@ -30,3 +30,6 @@ jobs:
 
       - name: Build and push golang-linter
         run: make golang-linter
+
+      - name: Build and push branch-length-checker
+        run: make branch-length-checker
