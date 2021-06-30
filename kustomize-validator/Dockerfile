@@ -16,4 +16,6 @@ RUN apk add --no-cache bash=5.1.0-r0
 COPY validateKustomization.sh /bin/validateKustomization.sh
 RUN chmod +x /bin/validateKustomization.sh
 
+WORKDIR /src
+
 ENTRYPOINT ["validateKustomization.sh"]

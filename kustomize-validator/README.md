@@ -33,6 +33,6 @@ Add the following block to your `.pre-commit-config.yaml`.
       - id: kustomize-validator
 ```
 
-#-# Docker
+## Docker
 
 Public repo: https://hub.docker.com/r/cybergrx/kustomize-validator
