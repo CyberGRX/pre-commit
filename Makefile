@@ -13,4 +13,7 @@ golang-linter: force
 branch-length-checker: force
 	$(MAKE) -C branch-length-checker docker
 
+kustomize-validator: force
+	$(MAKE) -C kustomize-validator docker
+
 force:
