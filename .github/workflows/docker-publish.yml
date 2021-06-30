@@ -33,3 +33,6 @@ jobs:
 
       - name: Build and push branch-length-checker
         run: make branch-length-checker
+
+      - name: Build and push kustomize-validator
+        run: make kustomize-validator
