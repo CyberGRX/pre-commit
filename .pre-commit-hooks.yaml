@@ -34,3 +34,9 @@
   entry: cybergrx/branch-length-checker:1.0.0
   language: docker_image
   always_run: true
+- id: kustomize-validator
+  name: Kustomize build validator
+  description: Builds kustomize packages
+  entry: cybergrx/kustomize-validator:1.0.0
+  language: docker_image
+  files: ".y[a]{0,1}ml$"
