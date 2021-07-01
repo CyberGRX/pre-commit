@@ -37,6 +37,6 @@
 - id: kustomize-validator
   name: Kustomize build validator
   description: Builds kustomize packages
-  entry: cybergrx/kustomize-validator:1.0.0
+  entry: cybergrx/kustomize-validator:1.0.1
   language: docker_image
   files: ".y[a]{0,1}ml$"
