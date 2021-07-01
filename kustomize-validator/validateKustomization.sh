@@ -1,13 +1,20 @@
 #! /usr/bin/env bash
 set -e
 
-check_file() {
-    local file=$1
-    kustomize build "$file" -o /dev/null
-    return $?
+check_folder() {
+    local folder=$1
+    local error=0
+    # local error_msg=$(kustomize build "$folder" -o /dev/null 2>&1)
+    { error_msg="$( { kustomize build "$folder" -o /dev/null; } 2>&1 1>&3 3>&- )"; } 3>&1;
+    error=$?
+    if [[ ${error} -gt 0 ]]; then
+        echo "Build failure in ${folder}"
+        echo $error_msg | fold -s -w 160 | awk '{ print "\t" $0 }'
+    fi
+    return $error
 }
 
-export -f check_file
+export -f check_folder
 
 check_files() {
     local all_files=( "$@" )
@@ -16,12 +23,11 @@ check_files() {
     toprocess=()
     for file in "${uniq[@]}" ; do
         if [[ -f $file/kustomization.yaml ]]; then
-            echo "Testing $file"
             toprocess+=( "$file" )
         fi
     done
     if [ ${#toprocess[@]} -gt 0 ]; then
-        printf '%s\0' "${toprocess[@]}" | xargs -0 -I {} -P 5 bash -c 'check_file "{}"'
+        printf '%s\0' "${toprocess[@]}" | xargs -0 -I {} -P 5 bash -c 'check_folder "{}"'
         has_error=$?
     fi
     return $has_error
