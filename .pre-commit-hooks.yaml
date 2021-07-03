@@ -40,3 +40,9 @@
   entry: cybergrx/kustomize-validator:1.0.1
   language: docker_image
   files: ".y[a]{0,1}ml$"
+- id: yaml-format
+  name: Reformat yaml using yq
+  description: Like gofmt but for yaml!
+  entry: cybergrx/yaml-format:1.0.0
+  language: docker_image
+  files: ".y[a]{0,1}ml$"
