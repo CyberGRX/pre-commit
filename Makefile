@@ -16,4 +16,7 @@ branch-length-checker: force
 kustomize-validator: force
 	$(MAKE) -C kustomize-validator docker
 
+yaml-format: force
+	$(MAKE) -C yaml-format docker
+
 force:
