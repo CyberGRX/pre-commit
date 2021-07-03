@@ -36,3 +36,6 @@ jobs:
 
       - name: Build and push kustomize-validator
         run: make kustomize-validator
+
+      - name: Build and push yaml-format
+        run: make yaml-format
