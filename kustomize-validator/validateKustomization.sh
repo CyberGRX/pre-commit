@@ -27,7 +27,7 @@ check_files() {
         fi
     done
     if [ ${#toprocess[@]} -gt 0 ]; then
-        printf '%s\0' "${toprocess[@]}" | xargs -0 -I {} -P 5 bash -c 'check_folder "{}"'
+        printf '%s\0' "${toprocess[@]}" | xargs -0 -I {} -P 25 bash -c 'check_folder "{}"'
         has_error=$?
     fi
     return $has_error
